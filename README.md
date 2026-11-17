@@ -2,8 +2,8 @@
 
 A full-stack app for tracking job applications: sign up, log in, and manage every application (company, role, status, applied date, notes).
 
-- **Live app:** `<add your Vercel/Netlify URL>`
-- **Live API:** `<add your Render URL>/api/health`
+- **Live app:** `job-tracker-five-bay.vercel.app`
+- **Live API:** `https://job-tracker-x1ip.onrender.com/api/health`
 - **Demo login:** `demo@jobtracker.dev` / `Demo@1234`
 
 ## Tech stack
@@ -27,7 +27,7 @@ A full-stack app for tracking job applications: sign up, log in, and manage ever
 ## Project structure
 
 ```
-server/   Express API (src/routes, src/models, src/middleware)
+server/   Express API (src/routes, src/handlers, src/validations, src/models, src/middleware)
 client/   React app (src/pages, src/components, src/store)
 ```
 

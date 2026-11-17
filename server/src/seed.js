@@ -1,4 +1,3 @@
-// Creates the demo account used in the README. Safe to re-run.
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';

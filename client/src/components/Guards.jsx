@@ -8,7 +8,6 @@ const Checking = () => (
   </div>
 );
 
-// Layout route: only logged-in users get through.
 export function ProtectedRoute() {
   const { user, checking } = useSelector((s) => s.auth);
   if (checking) return <Checking />;
@@ -23,7 +22,7 @@ export function ProtectedRoute() {
   );
 }
 
-// Login and signup pages: logged-in users go straight to the dashboard.
+
 export function PublicOnly({ children }) {
   const { user, checking } = useSelector((s) => s.auth);
   if (checking) return <Checking />;

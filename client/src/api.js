@@ -7,7 +7,6 @@ export const setUnauthorizedHandler = (fn) => {
   onUnauthorized = fn;
 };
 
-// Small fetch wrapper: adds the JWT, parses JSON, throws { message, errors } on failure.
 export async function api(path, { method = 'GET', body } = {}) {
   const token = localStorage.getItem('token');
   let res;
@@ -22,13 +21,13 @@ export async function api(path, { method = 'GET', body } = {}) {
   }
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
-    if (res.status === 401 && token) onUnauthorized(); // expired or invalid token
+    if (res.status === 401 && token) onUnauthorized(); 
     throw { message: data.message || 'Request failed', errors: data.errors };
   }
   return data;
 }
 
-// createAsyncThunk that rejects with the { message, errors } object from api().
+
 export const makeThunk = (type, fn) =>
   createAsyncThunk(type, async (arg, { rejectWithValue }) => {
     try {
